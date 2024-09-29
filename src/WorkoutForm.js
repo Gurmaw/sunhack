@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./src/App.css"; // Make sure to import the CSS file
 
 const WorkoutForm = () => {
   const [workout, setWorkout] = useState({
@@ -59,7 +60,7 @@ const WorkoutForm = () => {
         <input
           name="weight"
           value={workout.weight}
-          placeholder="Weight (lbs or kg)"
+          placeholder="Weight (lbs)"
           onChange={handleChange}
         />
         <button type="submit">Log workout</button>
@@ -71,7 +72,7 @@ const WorkoutForm = () => {
       {oneRepMax !== null && (
         <div className="ranking">
           <h2>Ranking</h2>
-          <p>One Rep Max: {oneRepMax} lbs or kg</p>
+          <p>One Rep Max: {oneRepMax} lbs</p>
         </div>
       )}
 
@@ -81,7 +82,7 @@ const WorkoutForm = () => {
           <ul>
             {loggedWorkouts.map((w, index) => (
               <li key={index}>
-                {w.exercise}: {w.reps} reps, {w.sets} sets, {w.weight} lbs or kg
+                {w.exercise}: {w.reps} reps, {w.sets} sets, {w.weight} lbs
               </li>
             ))}
           </ul>
